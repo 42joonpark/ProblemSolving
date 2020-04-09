@@ -11,7 +11,7 @@ struct node {
 int H, W;
 int dy[4] = {0, -1, 0, 1};
 int dx[4] = {-1, 0, 1, 0};
-char board[10][10];
+vector<string> board;
 bool vis[10][10][10][10];
 queue<node> q;
 
@@ -78,14 +78,18 @@ int main()
     int ry, rx, by, bx;
 
     scanf("%d %d", &H, &W);
+    board.resize(H);
 
     for (int i = 0; i < H; ++i)
     {
-        for (int j = 0; j < W; ++j)
-        {
-            scanf("%1s", &board[i][j]);
-            if (board[i][j] == 'R') ry = i, rx = j;
-            else if (board[i][j] == 'B') by = i, bx = j;
+        cin >> board[i];
+        for (int j = 0; j < board[i].size(); ++j) {
+            if (board[i][j] == 'R') {
+                ry = i, rx = j;
+            }
+            if (board[i][j] == 'B') {
+                by = i, bx = j;
+            }
         }
     }
     q.push({ry, rx, by, bx, 0});
