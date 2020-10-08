@@ -1,9 +1,11 @@
+// https://www.acmicpc.net/problem/9663
+
 #include <bits/stdc++.h>
 using namespace std;
 
 int N, sum;
-int dx[8] = {-1, 1};
-int dy[8] = {-1, -1};
+int dx[2] = {-1, 1};
+int dy[2] = {-1, -1};
 int cols[15];
 
 bool checkQueen(vector<vector<int>>& board, int y, int x)
